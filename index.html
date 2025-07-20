@@ -118,13 +118,13 @@
     .filter-bar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
-  align-items: right;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-bottom: 30px;
   font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem); /* responsive text size */
   padding: 0 5vw;
-  text-align: right;
+  text-align: center;
 }
 
 
@@ -170,13 +170,13 @@
     .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px); /* Match fixed width */
-  gap: 40px;
+  gap: 25px;
   justify-content: left; /* Center align grid */
 }
 
    .product {
-  width: 180px;        /* Fixed width */
-  height: 320px;       /* Fixed height */
+  width: 160px;        /* Fixed width */
+  height: 300px;       /* Fixed height */
   background: linear-gradient(270deg, #f5bd05, #ff5e00);
   border-radius: 16px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.5);
@@ -192,8 +192,8 @@
     
 
     .product img {
-  width: 180px;       /* Match container width */
-  height: 180px;      /* Fixed image height */
+  width: 160px;       /* Match container width */
+  height: 160px;      /* Fixed image height */
   object-fit: cover;
   image-rendering: auto;
   cursor: pointer;
@@ -325,38 +325,29 @@
   background-color: #25D366;
   color: white;
 }
-.filter-bar {
+body.loading #catalog,
+body.loading #pagination {
+  display: none;
+}
+
+#loader {
   display: flex;
-  align-items: center;
-  gap: 10px;
   justify-content: center;
-  margin-bottom: 30px;
-  font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem);
+  align-items: center;
+  height: 100vh;
+  font-size: 2em;
+  font-weight: bold;
+  animation: fade 1.2s ease-in-out infinite alternate;
+}
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.filter-icon {
-  position: relative;
-  width: 1em;
-  height: 1.2em;
-  line-height: 1em;
-  text-align: center;
-}
-
-.filter-bar .filter-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1em;
-  font-size: 1em;
-}
-
-.filter-triangle {
-  position: absolute;
-  top: 0.6em;
-  left: 0;
-  width: 1em;
-  font-size: 0.8em;
-}
 
   </style>
 </head>
@@ -377,7 +368,7 @@
   </header>
 
   <div class="highlights">
-    <span>Advance Payment mandatory(Full/Partial)</span>
+    <span>Advance Payment (Full/Partial)</span>
     <span>COD Payment</span>
     <span>Free Delivery</span>
     <span>Delivery Within 2-5 Days</span>
@@ -390,7 +381,7 @@
     <div class="filter-bar">
       <label for="companyFilter">Filter by Company:</label>
       <select id="companyFilter" onchange="filterProducts()">
-        <option value="all">View all (default)</option>
+        <option value="all">View all</option>
         <option value="Armani">Armani</option>
         <option value="Fossil">Fossil</option>
         <option value="Fossil Skeleton">Fossil Skeleton</option>
@@ -1569,10 +1560,23 @@
  
     ];
 
-    let currentPage = 1;
-let filtered = productsData;
 
-displayProducts(filtered, currentPage);
+  let currentPage = 1;
+  let filtered = productsData;
+
+  // Show loader immediately
+  document.body.classList.add('loading');
+
+  // Delay product display by 5 seconds
+  setTimeout(() => {
+    displayProducts(filtered, currentPage);
+
+    // Hide loader after products are shown
+    document.getElementById('loader').style.display = 'none';
+    document.body.classList.remove('loading');
+  }, 5000);
+
+
 
 
     function displayProducts(products, page = 1) {

@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Watch House - Trusted online store offering top-brand watches with COD and fast delivery." />
+  <meta name="keywords" content="watch, Fossil, Casio, Rolex, online watch store, COD watches, India watches" />
+  <meta name="author" content="Watch House" />
+  <title>Watch House</title>
+  <style>
+    .loader-title {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 3rem;
+  color: #ff6f00;
+  animation: pulse 1s infinite;
+  margin-bottom: 20px;
+}
+
+.dot-loader {
+  width: 60px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dot-loader::before,
+.dot-loader::after,
+.dot-loader div {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #ff6f00;
+  border-radius: 50%;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.dot-loader::after {
+  animation-delay: 0.2s;
+}
+
+.dot-loader div {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+    body {
+      
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(90deg, #ff9645, #ffc445);
+      margin: 0;
+      padding: 0;
+      color: #000000;
+    }
+
+    header {
+      font-family: 'Times New Roman', sans-serif;
+      background:linear-gradient(180deg, #f5bd05, #ff5e00);
+      color: black;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 1px;
+    }
+.highlights {
+  text-align: center;
+  font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem); /* Responsive text size */
+  margin: 2vh 0 4vh;
+  padding: 0 5vw; /* Side padding for small screens */
+  flex-wrap: wrap;
+}
+
+
+    .highlights span {
+  display: inline-block;
+  margin: 4px;
+  background-color: #ffcc80;
+  padding: 0.4em 1em;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 1vw + 0.2rem, 1rem); /* Responsive span text */
+  white-space: nowrap;
+}
+
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+  align-items: right;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem); /* responsive text size */
+  padding: 0 5vw;
+  text-align: right;
+}
+
+
+    .filter-bar label {
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem);
+  margin-right: 8px;
+}
+
+
+   select {
+  padding: 0.6em 1em;
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem);
+  border-radius: 8px;
+  border: none;
+  background-color: #ffe0b2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.5s ease;
+  max-width: 80vw; /* shrink on smaller screens */
+}
+
+
+    select:hover {
+      background-color: #ffd180;
+    }
+
+    .enquiry-upload {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .enquiry-upload input[type="file"],
+    .enquiry-upload textarea {
+      margin: 10px 0;
+      width: 80%;
+      max-width: 500px;
+      display: block;
+      padding: 10px;
+      border-radius: 8px;
+      border: 0.1rem solid #000000;
+    }
+
+    .catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px); /* Match fixed width */
+  gap: 40px;
+  justify-content: left; /* Center align grid */
+}
+
+   .product {
+  width: 180px;        /* Fixed width */
+  height: 320px;       /* Fixed height */
+  background: linear-gradient(270deg, #f5bd05, #ff5e00);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+
+    
+
+    .product img {
+  width: 180px;       /* Match container width */
+  height: 180px;      /* Fixed image height */
+  object-fit: cover;
+  image-rendering: auto;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+
+    .product-name {
+      padding: 15px 10px 0;
+      color: #000000;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      color: #000000;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .enquire-button {
+      margin: 5px 5px 20px;
+      padding: 10px 20px;
+      background-color:#ffdfa6;
+      color: black;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.5s ease;
+    }
+
+    .enquire-button:hover {
+      background-color: #25D366;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: background 0.5s ease;
+    }
+
+    .modal-content {
+      background: linear-gradient(270deg, #f5bd05, #ff5e00);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+      
+      position: relative;
+      transition: background 0.5s ease;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      height: 350px;
+      border-radius: 8px;
+    }
+
+    .modal-content h3, .modal-content p {
+      font-size: 1.5rem;
+      margin: 10px 50px;
+    }
+
+    .modal-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
+    .modal-controls button {
+      padding: 8px 20px;
+      background-color: #ffdfa6;
+      color: Black;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 10px 30px;
+      background-color: #25D366;
+      color: Black;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffe0b2;
+      color: #333;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    #pagination button {
+  padding: 8px 14px;
+  margin: 4px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffdfa6;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#pagination button:hover {
+  background-color: #25D366;
+  color: white;
+}
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1.1rem);
+}
+
+.filter-icon {
+  position: relative;
+  width: 1em;
+  height: 1.2em;
+  line-height: 1em;
+  text-align: center;
+}
+
+.filter-bar .filter-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  font-size: 1em;
+}
+
+.filter-triangle {
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 1em;
+  font-size: 0.8em;
+}
+
+  </style>
+</head>
+<body>
+  <div id="loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <h1 class="loader-title">Watch House</h1>
+  <div class="dot-loader">
+  <div></div>
+  
+  
+  </div>
+
+  </div>
+
+
+  <header>
+    <h1>Watch House</h1>
+  </header>
+
+  <div class="highlights">
+    <span>Advance Payment mandatory(Full/Partial)</span>
+    <span>COD Payment</span>
+    <span>Free Delivery</span>
+    <span>Delivery Within 2-5 Days</span>
+    <span>Support Within 24 Hours</span>
+    <br><br>
+    <span>*We do not have any offline store*</span>
+  </div>
+
+  <div class="container">
+    <div class="filter-bar">
+      <label for="companyFilter">Filter by Company:</label>
+      <select id="companyFilter" onchange="filterProducts()">
+        <option value="all">View all (default)</option>
+        <option value="Armani">Armani</option>
+        <option value="Fossil">Fossil</option>
+        <option value="Fossil Skeleton">Fossil Skeleton</option>
+        <option value="Casio">Casio</option>
+        <option value="G-Shock">G-Shock</option>
+        <option value="Rolex">Rolex</option>
+        <option value="Rolex Dragon">Rolex Dragon</option>
+        <option value="Rolex Emerald">Rolex Emerald</option>
+        <option value="Hublot">Hublot</option>
+        <option value="Tissot">Tissot</option>
+        <option value="Patek Philippe">Patek Philippe</option>
+      </select>
+    </div>
+
+    
+     
+    <div class="catalog" id="catalog"></div>
+    <div id="pagination" style="text-align:center; margin-top: 20px;"></div>
+<div class="enquiry-upload">
+      <h3>Can't find what you're looking for?</h3>
+      <p>Upload a picture of the watch you want and type a message. We'll assist you!</p>
+      <input type="file" id="customEnquiryImage" accept="image/*" />
+      <textarea id="customMessage" rows="3" placeholder="Enter your message here..."></textarea>
+      <button class="enquire-button" onclick="sendCustomEnquiry()">Send Enquiry with Image</button>
+    </div>
+  </div>
+
+  <div class="modal" id="zoomModal">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Zoomed Product">
+      <h3 id="modalName"></h3>
+      <p id="modalPrice"></p>
+      <a class="whatsapp-btn" id="whatsappEnquireLink" target="_blank">Enquire on WhatsApp</a>
+      <div class="modal-controls">
+        <button onclick="navigateProduct(-1)"><</button>
+        <button onclick="closeModal()">Exit Preview</button>
+        <button onclick="navigateProduct(1)">></button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Watch House. All rights reserved. | Powered by House of Phones<br>
+    <a href="https://www.instagram.com/houseofphones_/" target="_blank">Follow us on Instagram</a><br>
+    <a href="https://wa.me/918017007352" target="_blank">Message us on WhatsApp</a>
+  </footer>
+
+  <script>
+    const productsData = [
+      {
+    name: "Casio AW168 [Black]",
+    price: "₹1800",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/wZYdBV6t/Casio-A168-WG-9-EF-gold-2.jpg"
+   },
+   {
+    name: "Casio AW168 [Rose Gold]",
+    price: "₹1800",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/XxkXq21n/Casio-A168-WG-9-EF-gold-3.jpg"
+   },
+   {
+    name: "Casio AW168 [Gold]",
+    price: "₹1800",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/prw1PCSv/Casio-A168-WG-9-EF-gold-1.jpg"
+   },
+   {
+    name: "Casio Square [Blue,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/7t44y0Pb/IMG-20250106-WA0008.jpg"
+   },
+   {
+    name: "Casio Square [Silver,gold]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/PvRjPrYv/IMG-20250106-WA0112.jpg"
+   },
+   {
+    name: "Casio Square [Silver,black]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/ymKbpv3C/IMG-20250106-WA0111.jpg"
+   },
+   {
+    name: "Casio Square [black,black]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/fzwXTCpX/IMG-20250106-WA0113.jpg"
+   },
+   {
+    name: "Casio Square [black,gold]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/YF0rVd9g/IMG-20250106-WA0114.jpg"
+   },
+   {
+    name: "Casio Square [Red,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/MTchyzG/IMG-20250106-WA0116.jpg"
+   },
+   {
+    name: "Casio Square [Green,gold]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/dJWYf5Gw/IMG-20250106-WA0117.jpg"
+   },
+   {
+    name: "Casio Square [Green,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/cSWjZdCc/IMG-20250106-WA0118.jpg"
+   },
+   {
+    name: "Casio Square [Teal Green,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/hxXMLRKn/IMG-20250106-WA0119.jpg"
+   },
+   {
+    name: "Casio Square [Teal Green,gold]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/3GM5Tsp/IMG-20250106-WA0120.jpg"
+   },
+   {
+    name: "Casio Square [Blue,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/r2hVb8W0/IMG-20250106-WA0121.jpg"
+   },
+   {
+    name: "Casio Square [Pesta Green,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/27zhkQY8/IMG-20250106-WA0122.jpg"
+   },
+   {
+    name: "Casio Square [Black,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/S7xcPQWj/IMG-20250106-WA0123.jpg"
+   },
+   {
+    name: "Casio Square [Silver,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/vvHx1kyX/IMG-20250106-WA0124.jpg"
+   },
+   {
+    name: "Casio Square [Red,silver]",
+    price: "₹1900",
+    company: "Casio",
+    imageUrl: "https://i.ibb.co/qYV6bHyr/IMG-20250106-WA0125.jpg"
+   },
+   {
+  name: "G-Shock Model 1",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/Q2CH9cT/GMA-P2100-ST-9-A.jpg"
+   },
+   {
+  name: "G-Shock Model 2",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/27jKc4Jf/GM-S2100-3-A.jpg"
+   },
+   {
+  name: "G-Shock Model 3",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/FL0Hgb3N/Untitled-Project-15.jpg"
+   },
+   {
+  name: "G-Shock Model 4",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/S4VwkW4z/download-1.jpg"
+   },
+   {
+ name: "G-Shock Model 5",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/svbLptH5/download.jpg"
+   },
+   {
+  name: "G-Shock Model 6",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/tTMdmWXV/casioak-rainbow-1.jpg"
+   },
+   {
+  name: "G-Shock Model 7",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/mCpn5y2g/casioak-rainbow-2.jpg"
+   },
+   {
+  name: "G-Shock Model 8",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/Kzm1KXY9/GM-2100-BB-1-A.jpg"
+   },
+   {
+  name: "G-Shock Model 9",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/vx1J2fjq/GM-2100-G-1-A9.jpg"
+   },
+   {
+  name: "G-Shock Model 10",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/WpcHGyfg/GM-2100-GC-1-A.jpg"
+  },
+  {
+  name: "G-Shock Model 11",
+  price: "₹3500",
+  company: "G-Shock",
+  imageUrl: "https://i.ibb.co/TBSmHKXw/GM-2100-SS-1-A.jpg"
+ },
+
+ {
+  name: "Armani Silver Watch - AX1955",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/5gLq8kxX/IMG-20250106-WA0001.jpg"
+ },
+ {
+  name: "Emporio Armani AR11022 [Black,grey]",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/d4W1ZSWs/IMG-20250106-WA0018.jpg"
+ },
+ {
+  name: "Emporio Armani AR11022 [Silver,blue]",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/NgTykvMn/IMG-20250106-WA0019.jpg"
+ },
+ {
+  name: "Emporio Armani AR11022 [Black,black]",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/RGw0hxrp/IMG-20250106-WA0023.jpg"
+ },
+ {
+  name: "Emporio Armani AR11554 [Green,brown]",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/7NKdYTPh/IMG-20250106-WA0056.jpg"
+ },
+ {
+  name: "Emporio Armani AR11554 [Brown,brown]6",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/Mk2zLjT1/IMG-20250106-WA0057.jpg"
+ },
+ {
+  name: "Emporio Armani AR11554 [Brown,brown]7",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/V0qnKKqz/IMG-20250106-WA0070.jpg"
+ },
+ {
+  name: "Emporio Armani AR11554 [Brown,brown]8",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/bRQ2b9tz/IMG-20250106-WA0072.jpg"
+ },
+ {
+  name: "Emporio Armani AR11554 [Brown,brown]9",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/wFpSxybn/IMG-20250106-WA0073.jpg"
+ },
+ {
+  name: "Armani Silver Watch - AX19550",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/v4L0SSS3/IMG-20250106-WA0074.jpg"
+ },
+ {
+  name: "Armani Silver Watch - AX19551",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/rGSF2qNZ/IMG-20250106-WA0080.jpg"
+ },
+ {
+  name: "Armani Silver Watch - AX19552",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/39SgPpJj/IMG-20250106-WA0081.jpg"
+ },
+ {
+  name: "Armani Silver Watch - AX19553",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/cSK6RrYT/IMG-20250106-WA0082.jpg"
+ },
+ {
+  name: "Armani Silver Watch - AX19554",
+  price: "₹3200",
+  company: "Armani",
+  imageUrl: "https://i.ibb.co/0pSPVMPS/IMG-20250106-WA0083.jpg"
+ },
+ {
+  name: "Fossil Watch Model 1",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/NwBwGtW/IMG-20250106-WA0054.jpg"
+ },
+ {
+  name: "Fossil Watch Model 2",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/RppFZjNR/IMG-20250106-WA0055.jpg"
+ },
+ {
+  name: "Fossil Watch Model 3",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/S4PWJGJj/IMG-20250106-WA0058.jpg"
+ },
+ {
+  name: "Fossil Watch Model 4",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/YFPhnTMn/IMG-20250106-WA0059.jpg"
+ },
+ {
+  name: "Fossil Watch Model 5",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/prnMVWfG/IMG-20250106-WA0060.jpg"
+ },
+ {
+  name: "Fossil Watch Model 6",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/LhrGZ1kF/IMG-20250106-WA0061.jpg"
+ },
+ {
+  name: "Fossil Watch Model 7",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/hFYJnYcT/IMG-20250106-WA0062-1.jpg"
+ },
+ {
+  name: "Fossil Watch Model 8",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/F4NK1Z6k/IMG-20250106-WA0063.jpg"
+ },
+ {
+  name: "Fossil Watch Model 9",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/3mh24hmw/IMG-20250106-WA0064.jpg"
+ },
+ {
+  name: "Fossil Watch Model 10",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/VYRRy901/IMG-20250106-WA0065.jpg"
+ },
+ {
+  name: "Fossil Watch Model 11",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/JjKytWP6/IMG-20250106-WA0066.jpg"
+ },
+ {
+  name: "Fossil Watch Model 12",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/tM4BZL93/IMG-20250106-WA0067.jpg"
+ },
+ {
+  name: "Fossil Watch Model 13",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/6RXqJWHD/IMG-20250106-WA0068.jpg"
+ },
+ {
+  name: "Fossil Watch Model 14",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/YTpGWmp6/IMG-20250106-WA0069.jpg"
+ },
+ {
+  name: "Fossil Watch Model 15",
+  price: "₹3300",
+  company: "Fossil",
+  imageUrl: "https://i.ibb.co/tMyp1s2N/IMG-20250106-WA0071.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 1",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/KxdnDKCg/IMG-20250109-WA0009.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 2",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/p6qrDQqG/IMG-20250109-WA0010.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 3",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/WL9MG6t/IMG-20250109-WA0011.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 4",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/d4tSdxyh/IMG-20250109-WA0012.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 5",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/j9ZjF1b1/IMG-20250109-WA0014.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 6",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/0VvtYbJ5/IMG-20250109-WA0015.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 7",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/b5LL8Xgf/IMG-20250109-WA0017.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 8",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/S7sBx5tK/IMG-20250109-WA0018.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 9",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/KPjL5bp/IMG-20250109-WA0019.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 10",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/k20Yy3NK/IMG-20250109-WA0020.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 11",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/CrvDYY5/IMG-20250109-WA0021.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 12",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/RG23Dgq3/IMG-20250109-WA0022.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 13",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/cXDJy4fm/IMG-20250109-WA0023.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 14",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/TMrzLXXP/IMG-20250109-WA0024.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 15",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/Xf2WhCpw/IMG-20250109-WA0025.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 16",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/F41PRWwC/Screenshot-20250119-094801-Whats-App.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 17",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/GftLprMF/20250119-233252.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 18",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/VWpFYmxV/20250119-233334.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 19",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/mC3kwBqm/IMG-20250109-WA0005.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 20",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/9HDPxMTQ/IMG-20250109-WA0006.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 21",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/sv5HTJTV/IMG-20250109-WA0007.jpg"
+ },
+ {
+  name: "Fossil Skeleton Model 22",
+  price: "₹4000",
+  company: "Fossil Skeleton",
+  imageUrl: "https://i.ibb.co/1GbPjSqc/IMG-20250109-WA0008.jpg"
+ },
+ {
+  name: "Hublot Model 1",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/n8LZG5PP/BIG-BANG-SANG-BLEU-II-1.jpg"
+ },
+ {
+  name: "Hublot Model 2",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/jZ5GFHmD/BIG-BANG-SANG-BLEU-II-2.jpg"
+ },
+ {
+  name: "Hublot Model 3",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/3mSSSwv0/BIG-BANG-SANG-BLEU-II-3.jpg"
+ },
+ {
+  name: "Hublot Model 4",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/KpSt4zkY/BIG-BANG-SANG-BLEU-II-4.jpg"
+ },
+ {
+  name: "Hublot Model 5",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/KxTYKKDR/BIG-BANG-SANG-BLEU-II-5.jpg"
+ },
+ {
+  name: "Hublot Model 6",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/MDT4N2kc/BIG-BANG-SANG-BLEU-II-6.jpg"
+ },
+ {
+  name: "Hublot Model 7",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/gL3cVcm3/BIG-BANG-SANG-BLEU-II-7.jpg"
+ },
+ {
+  name: "Hublot Model 8",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/whXSrRFS/BIG-BANG-SANG-BLEU-II-8.jpg"
+ },
+ {
+  name: "Hublot Model 9",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/rKsZ6b73/BIG-BANG-SANG-BLEU-II-9.jpg"
+ },
+ {
+  name: "Hublot Model 10",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/BKLcRTtm/BIG-BANG-SANG-BLEU-II-10.jpg"
+ },
+ {
+  name: "Hublot Model 11",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/C3tmkh23/BIG-BANG-SANG-BLEU-II-11.jpg"
+ },
+ {
+  name: "Hublot Model 12",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/8p0XHt4/MP-13-Tourbillon-Bi-Axis-Retrograde-1.jpg"
+ },
+ {
+  name: "Hublot Model 13",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/NBQF9bN/MP-13-Tourbillon-Bi-Axis-Retrograde-2.jpg"
+ },
+ {
+  name: "Hublot Model 14",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/Lhvqc1RY/Spirit-of-bang-22-1.jpg"
+ },
+ {
+  name: "Hublot Model 15",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/tPcrgsPm/Spirit-of-bang-22-2.jpg"
+ },
+ {
+  name: "Hublot Model 16",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/HTnQkX6Y/Spirit-of-bang-22-3.jpg"
+ },
+ {
+  name: "Hublot Model 17",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/HfkHy712/Spirit-of-bang-22-4.jpg"
+ },
+ {
+  name: "Hublot Model 18",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/7tHfKWNz/Spirit-of-bang-22-5.jpg"
+ },
+ {
+  name: "Hublot Model 19",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/prRrjsxh/Spirit-of-bang-22-6.jpg"
+ },
+ {
+  name: "Hublot Model 20",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/8nQxCMMH/Spirit-of-bang-22-7.jpg"
+ },
+ {
+  name: "Hublot Model 21",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/93yL8Jhc/Spirit-of-Big-Bang-1.jpg"
+ },
+ {
+  name: "Hublot Model 22",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/8LsbkMM3/Spirit-of-Big-Bang-2.jpg"
+ },
+ {
+  name: "Hublot Model 23",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/KpCt8wn6/Spirit-of-Big-Bang-3.jpg"
+ },
+ {
+  name: "Hublot Model 24",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/CphkzPmB/Spirit-of-Big-Bang-4.jpg"
+ },
+ {
+  name: "Hublot Model 25",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/xtkQYvjr/Spirit-of-Big-Bang-5.jpg"
+ },
+ {
+  name: "Hublot Model 26",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/XZxK53s0/Spirit-of-Big-Bang-6.jpg"
+ },
+ {
+  name: "Hublot Model 27",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/k6GS7YQD/Spirit-of-Big-Bang-7.jpg"
+ },
+ {
+  name: "Hublot Model 28",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/9mqKxJhM/Spirit-of-Big-Bang-8.jpg"
+ },
+ {
+  name: "Hublot Model 29",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/FqNyfnpK/Spirit-of-Big-Bang-9.jpg"
+ },
+ {
+  name: "Hublot Model 30",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/j90sKCvq/Untitled-Project-24.jpg"
+ },
+ {
+  name: "Hublot Model 31",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/NnYMY8Sw/Untitled-Project-25.jpg"
+ },
+ {
+  name: "Hublot Model 32",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/jZGkr1JH/Untitled-Project-26.jpg"
+ },
+ {
+  name: "Hublot Model 33",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/hJRWQPKT/Untitled-Project-27.jpg"
+ },
+ {
+  name: "Hublot Model 34",
+  price: "₹3800",
+  company: "Hublot",
+  imageUrl: "https://i.ibb.co/bMm9CsKj/Untitled-Project-28.jpg"
+ },
+ {
+  name: "Patek Philippe Model 1",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/Q7zHYK3r/Patek-Philippe-Nautilus-5711-R-13.jpg"
+ },
+ {
+  name: "Patek Philippe Model 2",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/mCQ9MH3V/Patek-Philippe-Nautilus-5711-R-14.jpg"
+ },
+ {
+  name: "Patek Philippe Model 3",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/FbpL5fPh/Patek-Philippe-Nautilus-5711-R-1.jpg"
+ },
+ {
+  name: "Patek Philippe Model 4",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/SD3cmYYZ/Patek-Philippe-Nautilus-5711-R-4.jpg"
+ },
+ {
+  name: "Patek Philippe Model 5",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/rRZV4RzN/Patek-Philippe-Nautilus-5711-R-5.jpg"
+ },
+ {
+  name: "Patek Philippe Model 6",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/39dVxLd2/Patek-Philippe-Nautilus-5711-R-6.jpg"
+ },
+ {
+  name: "Patek Philippe Model 7",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/DfsbTz7T/Patek-Philippe-Nautilus-5711-R-7.jpg"
+ },
+ {
+  name: "Patek Philippe Model 8",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/tPPQJwd2/Patek-Philippe-Nautilus-5711-R-8.jpg"
+ },
+ {
+  name: "Patek Philippe Model 9",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/sp2mMbS1/Patek-Philippe-Nautilus-5711-R-9.jpg"
+ },
+ {
+  name: "Patek Philippe Model 10",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/m5RsdxB7/Patek-Philippe-Nautilus-5711-R-11.jpg"
+ },
+ {
+  name: "Patek Philippe Model 11",
+  price: "₹2800",
+  company: "Patek Philippe",
+  imageUrl: "https://i.ibb.co/gLhpwLx6/Patek-Philippe-Nautilus-5711-R-12.jpg"
+ },
+ {
+  name: "Rolex Model 1",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/zVvSfmTp/Rolex-GMT-Master-II-12.jpg"
+ },
+ {
+  name: "Rolex Model 2",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/p6Zkr5Bj/Untitled-Project-24.jpg"
+ },
+ {
+  name: "Rolex Model 3",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/k6gQnsvK/image-3.png"
+ },
+ {
+  name: "Rolex Model 4",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/d0L2BJQQ/image-10.png"
+ },
+ {
+  name: "Rolex Model 5",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/Hf5FBypM/image-2.png"
+ },
+ {
+  name: "Rolex Model 6",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/sJRXbR63/image.png"
+ },
+ {
+  name: "Rolex Model 7",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/fLb4zLW/image-13.png"
+ },
+ {
+  name: "Rolex Model 8",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/XZ5qx40G/image-12.png"
+ },
+ {
+  name: "Rolex Model 9",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/Jw2b2g94/image-11.png"
+ },
+ {
+  name: "Rolex Model 10",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/TDSzSnMp/Day-Date-36-6.jpg"
+ },
+ {
+  name: "Rolex Model 11",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/YBmfNnz9/Rolex-Day-Date-40-President-1.jpg"
+ },
+ {
+  name: "Rolex Model 12",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/twyXXgvK/Rolex-Day-Date-40-President-2.jpg"
+ },
+ {
+  name: "Rolex Model 13",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/p6wddjVM/Rolex-Day-Date-40-President-3.jpg"
+ },
+ {
+  name: "Rolex Model 14",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/1GQfhznZ/Rolex-Day-Date-40-President-4.jpg"
+ },
+ {
+  name: "Rolex Model 15",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/0RCHTsLV/Rolex-Day-Date-40-President-5.jpg"
+ },
+ {
+  name: "Rolex Model 16",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/Kjhjz2Fg/Rolex-Day-Date-40-President-6.jpg"
+ },
+ {
+  name: "Rolex Model 17",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/rGnsP8xC/Rolex-Day-Date-40-President-7.jpg"
+ },
+ {
+  name: "Rolex Model 18",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/23gG4KxT/Rolex-Day-Date-40-President-8.jpg"
+ },
+ {
+  name: "Rolex Model 19",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/Q5L902x/Rolex-Day-Date-40-President-9.jpg"
+ },
+ {
+  name: "Rolex Model 20",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/67m292qf/Rolex-Day-Date-40-President-10.jpg"
+ },
+ {
+  name: "Rolex Model 21",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/Tqrm4Tjg/Rolex-GMT-Master-II-1.jpg"
+ },
+ {
+  name: "Rolex Model 22",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/jPfNnJj7/Rolex-GMT-Master-II-2.jpg"
+ },
+ {
+  name: "Rolex Model 23",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/sJNdq1k3/Rolex-GMT-Master-II-3.jpg"
+ },
+ {
+  name: "Rolex Model 24",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/pvvmB423/Rolex-GMT-Master-II-4.jpg"
+ },
+ {
+  name: "Rolex Model 25",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/qY9RcnJp/Rolex-GMT-Master-II-5.jpg"
+ },
+ {
+  name: "Rolex Model 26",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/C5dFS2Rm/Rolex-GMT-Master-II-6.jpg"
+ },
+ {
+  name: "Rolex Model 27",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/Y473nVpC/Rolex-GMT-Master-II-7.jpg"
+ },
+ {
+  name: "Rolex Model 28",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/BHzmb24k/Rolex-GMT-Master-II-8.jpg"
+ },
+ {
+  name: "Rolex Model 29",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/6RRs3TcL/Rolex-GMT-Master-II-9.jpg"
+ },
+ {
+  name: "Rolex Model 30",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/JjX2npYj/Rolex-GMT-Master-II-10.jpg"
+ },
+ {
+  name: "Rolex Model 31",
+  price: "₹3100",
+  company: "Rolex",
+  imageUrl: "https://i.ibb.co/35SYG3kP/Rolex-GMT-Master-II-11.jpg"
+ },
+ {
+  name: "Rolex Dragon 1",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/pjv3XFDq/IMG-20250106-WA0031.jpg"
+},
+{
+  name: "Rolex Dragon 2",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/fVRpVW9N/IMG-20250106-WA0033.jpg"
+},
+{
+  name: "Rolex Dragon 3",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/hxh4CfX8/IMG-20250106-WA0034.jpg"
+},
+{
+  name: "Rolex Dragon 4",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/nNqhj7xd/IMG-20250106-WA0036.jpg"
+},
+{
+  name: "Rolex Dragon 5",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/KYRcKpr/IMG-20250106-WA0037.jpg"
+},
+{
+  name: "Rolex Dragon 6",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/jvZ3LNPC/IMG-20250106-WA0038.jpg"
+},
+{
+  name: "Rolex Dragon 7",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/C5ypG3PZ/IMG-20250106-WA0039.jpg"
+},
+{
+  name: "Rolex Dragon 8",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/JWrJmy5P/IMG-20250106-WA0041.jpg"
+},
+{
+  name: "Rolex Dragon 9",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/vvCc9JXF/IMG-20250106-WA0042.jpg"
+},
+{
+  name: "Rolex Dragon 10",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/pNRqpxN/IMG-20250106-WA0044.jpg"
+},
+{
+  name: "Rolex Dragon 11",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/8gdqJy7W/IMG-20250106-WA0025.jpg"
+},
+{
+  name: "Rolex Dragon 12",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/7JM1hjRQ/IMG-20250106-WA0026.jpg"
+},
+{
+  name: "Rolex Dragon 13",
+  price: "₹3500",
+  company: "Rolex Dragon",
+  imageUrl: "https://i.ibb.co/GQZQD8Yn/IMG-20250106-WA0030.jpg"
+},
+{
+  name: "Rolex Emerald 1",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/TxDWXx39/Day-Date-36-1.jpg"
+},
+{
+  name: "Rolex Emerald 2",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/HDcfYYf5/Day-Date-36-2.jpg"
+},
+{
+  name: "Rolex Emerald 3",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/qLWMrzH5/Day-Date-36-3.jpg"
+},
+{
+  name: "Rolex Emerald 4",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/Wp2s8gm1/Day-Date-36-4.jpg"
+},
+{
+  name: "Rolex Emerald 5",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/8406wVMP/Day-Date-36-5.jpg"
+},
+{
+  name: "Rolex Emerald 6",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/JjyjyPd4/IMG-20250106-WA0076.jpg"
+},
+{
+  name: "Rolex Emerald 7",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/MKkVGCn/IMG-20250106-WA0077.jpg"
+},
+{
+  name: "Rolex Emerald 8",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/RGw08LGq/IMG-20250106-WA0079.jpg"
+},
+{
+  name: "Rolex Emerald 9",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/HfJqGmHN/IMG-20250106-WA0105.jpg"
+},
+{
+  name: "Rolex Emerald 10",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/KxvFbtMg/IMG-20250106-WA0106.jpg"
+},
+{
+  name: "Rolex Emerald 11",
+  price: "₹4200",
+  company: "Rolex Emerald",
+  imageUrl: "https://i.ibb.co/8kXnLBc/IMG-20250106-WA0108.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 1",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/7Nr4Qggz/Tissot-PRX-51mm-7.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 2",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/PGhWRTQR/Tissot-PRX-51mm-1.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 3",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/XZbjb9BR/Tissot-PRX-51mm-2.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 4",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/Y47H2LDt/Tissot-PRX-51mm-3.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 5",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/KjGVkQnQ/Tissot-PRX-51mm-4.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 6",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/G3Hpj875/Tissot-PRX-51mm-5.jpg"
+},
+{
+  name: "Tissot PRX 51mm - 7",
+  price: "₹2500",
+  company: "Tissot",
+  imageUrl: "https://i.ibb.co/X9zSgSd/Tissot-PRX-51mm-6.jpg"
+}
+
+
+
+ 
+    ];
+
+    let currentPage = 1;
+let filtered = productsData;
+
+displayProducts(filtered, currentPage);
+
+
+    function displayProducts(products, page = 1) {
+  const catalog = document.getElementById('catalog');
+  const pagination = document.getElementById('pagination');
+  catalog.innerHTML = '';
+  pagination.innerHTML = '';
+
+  const productsPerPage = 10;
+  const totalPages = Math.ceil(products.length / productsPerPage);
+  const start = (page - 1) * productsPerPage;
+  const end = start + productsPerPage;
+  const currentProducts = products.slice(start, end);
+
+  currentProducts.forEach((product, index) => {
+    const card = document.createElement('div');
+    card.className = 'product';
+    card.setAttribute('data-company', product.company);
+    card.innerHTML = `
+      <img loading="lazy" src="${product.imageUrl}" alt="${product.name}" onclick="zoomProduct(${start + index})">
+      <div class="product-name">${product.name}</div>
+      <div class="product-price">${product.price}</div>
+      <button class="enquire-button" onclick="sendEnquiry('${product.name}', '${product.imageUrl}')">Enquire on WhatsApp</button>
+    `;
+    catalog.appendChild(card);
+  });
+
+  // Pagination buttons
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    btn.className = 'enquire-button';
+    if (i === page) {
+      btn.style.backgroundColor = '#ff5e00';
+      btn.style.color = 'white';
+    }
+    btn.onclick = () => {
+      currentPage = i;
+      displayProducts(products, i);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    pagination.appendChild(btn);
+  }
+
+  // Hide loader
+  document.getElementById('loader').style.display = 'none';
+  document.body.classList.remove('loading');
+}
+
+    function zoomProduct(index) {
+       currentProductIndex = index;
+       const product = filtered[index]; // ✅ Now works correctly
+       document.getElementById('modalImage').src = product.imageUrl;
+       document.getElementById('modalName').innerText = product.name;
+       document.getElementById('modalPrice').innerText = product.price;
+       document.getElementById('whatsappEnquireLink').href = `https://wa.me/918017007352?text=${encodeURIComponent("Hi, I'm interested in your product: " + product.name + " from Watch House.\nImage: " + product.imageUrl)}`;
+       document.getElementById('zoomModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('zoomModal').style.display = 'none';
+    }
+
+    function navigateProduct(direction) {
+      currentProductIndex += direction;
+      if (currentProductIndex < 0) currentProductIndex = productsData.length - 1;
+      if (currentProductIndex >= productsData.length) currentProductIndex = 0;
+      zoomProduct(currentProductIndex);
+    }
+
+    function filterProducts() {
+  const selected = document.getElementById('companyFilter').value;
+  filtered = selected === 'all' ? productsData : productsData.filter(p => p.company === selected);
+  currentPage = 1;
+  displayProducts(filtered, currentPage);
+}
+
+
+    function sendEnquiry(productName, imageUrl) {
+      const phone = "918017007352";
+      const message = `Hi, I'm interested in your product: ${productName} from Watch House.\nImage: ${imageUrl}`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function sendCustomEnquiry() {
+      const fileInput = document.getElementById('customEnquiryImage');
+      const customMessage = document.getElementById('customMessage').value;
+      const file = fileInput.files[0];
+      if (!file) {
+        alert("Please upload an image.");
+        return;
+      }
+      const phone = "918017007352";
+      const reader = new FileReader();
+      reader.onload = function () {
+        const message = `Hi, I want to enquire about this watch.\nMessage: ${customMessage}\n(Attached image below 👇)`;
+        alert("Image processed successfully. You'll now be redirected to WhatsApp.");
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    displayProducts(productsData);
+    document.body.classList.add('loading');
+displayProducts(productsData);
+function hideLoaderWhenImagesLoad() {
+  const images = document.querySelectorAll('#catalog img');
+  let loadedCount = 0;
+
+  images.forEach(img => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.onload = img.onerror = () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          clearTimeout(loaderTimeout); // Prevent double hide
+          document.getElementById('loader').style.display = 'none';
+          document.body.classList.remove('loading');
+        }
+      };
+    }
+  });
+
+  if (loadedCount === images.length) {
+    clearTimeout(loaderTimeout);
+    document.getElementById('loader').style.display = 'none';
+    document.body.classList.remove('loading');
+  }
+}
+
+const loaderTimeout = setTimeout(() => {
+  document.getElementById('loader').style.display = 'none';
+  document.body.classList.remove('loading');
+}, 5000); // fallback
+hideLoaderWhenImagesLoad();
+
+
+setTimeout(() => {
+  document.getElementById('loader').style.display = 'none';
+  document.body.classList.remove('loading');
+}, 5000); // Max 5 seconds
+
+  </script>
+</body>
+</html>
